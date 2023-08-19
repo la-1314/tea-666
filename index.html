@@ -1,61 +1,133 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title>CSS教程</title>
+		<title>MyWeb</title>
 		<style>
+			/* 添加CSS样式来美化页面 */
 			body {
-				font-family: '微软雅黑';
-				font-size: 18px;
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+
+			header {
+				background-color: #333;
+				color: #fff;
+				padding: 20px;
+				text-align: center;
+			}
+
+			nav ul {
+				display: flex;  
+				justify-content: space-between;  
+				align-items: center;  
+				text-align: center;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #f2f2f2;
+			}
+
+			nav ul li {
+				text-align: center;
+				float:left;
+				
+			}
+
+			nav ul li a {
+				text-align: center;
+				display: inline-block;
+				padding: 10px;
+				text-decoration: none;
 				color: #333;
 			}
 
-			.header {
-				font-weight: bold;
+			nav ul li:first-child {  
+			  margin-left: 10px;  
+			}  
+			  
+			
+			nav ul li:second-child {  
+			  padding-left: 10px;  
+			}
+			
+			
+			nav ul li:nth-child(2) {  
+			  margin-left: 15px;  
+			}
+			
+			section {
+				padding: 20px;
+				color：#000
 			}
 
-			.keyword {
-				color: red;
+			footer {
+				background-color: #333;
+				color: #fff;
+				padding: 10px;
+				text-align: center;
 			}
 
-			.blue {
-				color: blue;
+			/* 添加动效 */
+			section {
+				transition: transform 0.3s ease;
 			}
 
-			ul {
-				list-style-type: none;
-			}
-
-			li {
-				margin-bottom: 10px;
-			}
-
-			.green {
-				color: green;
-			}
-
-			.gray {
-				color: gray;
+			section:hover {
+				transform: scale(1.05);
 			}
 		</style>
 	</head>
 	<body>
-		<h2 class="header">
-			<em class="keyword">什么是CSS</em>
-			<em class="blue">？-CSS教程</em>
-		</h2>
-		<p>
-			<span class="keyword">lalala-1314提示：</span>
-			可以通过简单的更改CSS文件，改变网页的整体表现形式，可以减少我们的工作量，
-			所以她是每一个网页设计人员的必修课，知道什么是CSS了，现在就开始学习CSS吧……
-		</p>
-		<ul>
-			<li><a class="green" href="http://www.dreamdu.com/css/wh..." target="_blank">www.dreamdu.com/css/wh...</a> -
-				<span class="gray">百度快照</span> - <span class="gray">85%好评</span></li>
-			<li><a class="green" href="http://www.w3school.com.cn/css..." target="_blank">www.w3school.com.cn/css...</a>
-				- <span class="gray">W3School在线教程</span> - <span class="gray">95%好评</span></li>
-			<li><a class="green" href="http://www.runoob.com/css/css-..." target="_blank">www.runoob.com/css/css-...</a>
-				- <span class="gray">菜鸟教程</span> - <span class="gray">90%好评</span></li>
-		</ul>
+		<header>
+			<h1>欢迎来到我的网页</h1>
+		</header>
+
+		<!-- <nav> -->
+		<nav>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#last">关于</a></li>
+				<li><a href="mailto:13738288274@qq.com">联系我们</a></li>
+			</ul>
+		</nav>
+
+		<section>
+			<h2>关于我们</h2>
+			<p>这里是MyWeb，我们提供学习服务。</p>
+		</section>
+
+		<section>
+			<a href="index.html" style="text-decoration: none; color: black;">  
+			  <h2>教程</h2>  
+			  <p>这里是我们的教程页面，你可以找到关于HTML、CSS和JavaScript的教程。</p>  
+			</a>
+		</section>
+
+
+
+		<footer>
+			<a name="last">
+				<p>&copy; 2022 MyWeb。保留所有权利。</p>
+			</a>
+		</footer>
+
+		<script>
+			// 添加JavaScript代码来实现更多的动效
+			document.addEventListener('DOMContentLoaded', function() {
+				var sections = document.querySelectorAll('section');
+
+				sections.forEach(function(section) {
+					section.addEventListener('mouseover', function() {
+						this.style.backgroundColor = '#f2f2f2';
+					});
+
+					section.addEventListener('mouseout', function() {
+						this.style.backgroundColor = '#fff';
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
